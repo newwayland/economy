@@ -46,7 +46,20 @@ func ExampleChoiceIndex() {
 func ExampleWithProbability() {
 	fmt.Println(WithProbability(1.0))
 	fmt.Println(WithProbability(0.0))
-	//Output:
-	//true
-	//false
+	// Output:
+	// true
+	// false
+}
+
+func ExampleWeightedChoice() {
+	// Fix the random order
+	rand.Seed(1)
+
+	var list []WeightedElement[string, uint]
+	list = append(list, NewWeightedElement("first", uint(20)))
+	list = append(list, NewWeightedElement("second", uint(30)))
+	list = append(list, NewWeightedElement("third", uint(10)))
+	fmt.Println(WeightedChoice(list))
+	// Output:
+	// second
 }
