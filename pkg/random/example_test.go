@@ -1,3 +1,7 @@
+// Copyright 2023 Neil Wilson. All rights reserved.
+// Use of this source code is governed by the AGPL
+// licence that can be found in the LICENSE file.
+
 package random
 
 import (
@@ -15,4 +19,34 @@ func ExampleSample() {
 	fmt.Println(wordSample)
 	// Output:
 	// [of ink mouth]
+}
+
+func ExampleChoice() {
+	// Fix the random order
+	rand.Seed(1)
+	words := strings.Fields("ink runs from the corners of my mouth")
+
+	wordChoice := Choice(words)
+	fmt.Println(wordChoice)
+	// Output:
+	// runs
+}
+
+func ExampleChoiceIndex() {
+	// Fix the random order
+	rand.Seed(1)
+	words := strings.Fields("ink runs from the corners of my mouth")
+
+	index := ChoiceIndex(words)
+	fmt.Println(index)
+	// Output:
+	// 1
+}
+
+func ExampleWithProbability() {
+	fmt.Println(WithProbability(1.0))
+	fmt.Println(WithProbability(0.0))
+	//Output:
+	//true
+	//false
 }

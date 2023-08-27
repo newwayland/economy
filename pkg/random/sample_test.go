@@ -1,3 +1,7 @@
+// Copyright 2023 Neil Wilson. All rights reserved.
+// Use of this source code is governed by the AGPL
+// licence that can be found in the LICENSE file.
+
 package random
 
 import (
